@@ -61,7 +61,7 @@ int main(){
     {
         int Warriorvalue[5], redposition=0, blueposition=0, minhealth=0, Totalhealth=0;
         bool redHadStop=false, blueHadStop=false;
-        cout<<"input Totalhealth";
+//        cout<<"input Totalhealth";
         cin>>Totalhealth; //obtain total health
 //        obtain every warrior life value
         for (int j=0; j<5;j++){
@@ -90,8 +90,8 @@ int main(){
             }
             else
             {
-                    while(true)
-                    {
+                while(true)
+                {
                     if (redone.getHealth() >= redone.getWarriorvalue(redposition))
                     {
                         redone.print(time, redposition);
@@ -124,7 +124,7 @@ int main(){
                         }
                         else
                         {
-                            blueposition==4?blueposition=0 : blueposition;
+                            blueposition==4?blueposition=0 : blueposition++;
                         }
                 }
             }
