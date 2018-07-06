@@ -5,7 +5,10 @@ class MyInt  {
     public:
         MyInt(int n) { nVal = n; }
         int ReturnVal() { return nVal; }
-// 在此处补充你的代码
+		MyInt & operator-(const int & a){
+			nVal = nVal-a;
+			return *this;
+		}
 };
 int main ()  {
     MyInt objInt(10);
