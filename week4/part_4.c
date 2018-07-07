@@ -137,7 +137,7 @@ A A::operator-(const A & rhs){
 			rvalue = "0" + rvalue;
 		}
 	}
-	if (rsize > lsize){
+	else if (rsize > lsize){
 		for (i=0; i < rsize-lsize; i++){
 			lvalue = "0" + lvalue;
 		}
@@ -169,7 +169,7 @@ A A::operator-(const A & rhs){
 		if (lvalue[i]<rvalue[i]){
 			j=1;
 			while (lvalue[i+j]=='0'){
-				lvalue[i+j]=='9';
+				lvalue[i+j]='9';
 				j++;
 			}
 			lvalue[i+j]-=1;
@@ -189,7 +189,6 @@ A A::operator-(const A & rhs){
 A A::operator*(const A & rhs){
 	A ret;
 	string lvalue(values), rvalue(rhs.values);
-
 	if (lvalue=="0"|| rvalue=="0"){
 		ret.flag= true;
 		ret.values='0';
