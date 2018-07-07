@@ -173,6 +173,7 @@ A A::operator-(const A & rhs){
 				j++;
 			}
 			lvalue[i+j]-=1;
+			res = res + char(lvalue[i] + ':' - rvalue[i]);
 		}
 		else{
 			res = res + char(lvalue[i] - rvalue[i] + '0');
