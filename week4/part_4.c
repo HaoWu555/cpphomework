@@ -31,7 +31,7 @@ public:
 	A operator+(const A & rhs);
 	A operator-(const A & rhs);
 	A operator*(const A & rhs);
-//	A operator/(const A & rhs);
+	A operator/(const A & rhs);
 
 };
 
@@ -238,16 +238,72 @@ A A::operator*(const A & rhs){
 };
 
 
+A A::operator/(const A & rhs){
+	A ret;
+	string lvalue(values), rvalue(rhs.values);
+	string quotient;
+	
+	if(rvalue == "0"){
+		ret.values="error"; 
+		ret.flag= true;
+		return ret;
+	}
+	if(lvalue == "0"){
+		ret.values = "0";
+		ret.flag=true;
+		return ret;
+	}
+	if (compare(lvalue,rvalue)<0){
+		ret.values="0";
+		ret.flag=true;
+		return ret;
+	}
+	else if (compare(lvalue,rvalue)==0){
+		ret.values = "1";
+		ret.flag=true;
+	}
+	else {
+		string temp;
+		unsigned int lsize, rsize;
+		lsize=lvalue.size();
+		rsize=rvalue.size();
+		int i;
+		if(rsize>1) temp.append(lvalue,0, rsize-1);
+		for (i=rsize -1; i<lsize; i++){
+			temp= temp + lvalue[i];
+			for (char c='9'; c>='0'; c--){
+				A t = (A)rvalue * (A)string(1,c);
+				A s = (A) temp -t;
+
+				if (s.flag == true){
+					temp = s.values;
+					quotient = quotient +c;
+					break;
+				}
+			}
+		}
+	}
+
+	quotient.erase(0, quotient.find_first_not_of('0'));
+	ret.values = quotient;
+	ret.flag=true;
+	return ret;
+
+
+
+};
+
 
 int main(){
 	A a, b, result;
 	char op;
 	cin>>a>>op>>b;
-	cout<<a<<op<<b<<endl;
+//	cout<<a<<op<<b<<endl;
 	switch(op){
 		case '+': result = a+b; break;
 		case '-': result = a-b; break;
 		case '*': result = a*b; break;
+		case '/': result = a/b; break;
 	}
 	cout<<result<< endl;
 
