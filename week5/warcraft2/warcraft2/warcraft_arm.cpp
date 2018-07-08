@@ -52,12 +52,13 @@ void headquarters::print(int time, int position){
     count++;
     warriorNum[position]++;
     cout<< setfill('0') <<setw(3)<<time<<" "<<headquartersname<<" "<<warriorname[position]<<" "<<count<<" "<<"born with strength "<< warriorvalue[position]<<","<<warriorNum[position]<<" "<<warriorname[position]<<" in "<< headquartersname <<" headquarter"<<endl;
+   
     totalhealth -= warriorvalue[position];
     
     if (warriorname[position] =="dragon"){ //dragon
         float morale;
-        morale = (float) totalhealth / warriorvalue[position];
-        cout<<"It has a "<< weapon[count%3]<< ", and it's morale is "<<setiosflags(ios::fixed)<<setprecision(2)<<morale <<endl;
+        morale = (float)totalhealth / (float) warriorvalue[position];
+        cout<<"It has a "<< weapon[count%3]<< ",and it's morale is "<<setiosflags(ios::fixed)<<setprecision(2)<<morale <<endl;
     }
     else if (warriorname[position] =="ninja"){ //ninja
         cout<<"It has a "<<weapon[count%3]<<" and a "<<weapon[(count+1)%3]<<endl;
