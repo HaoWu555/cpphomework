@@ -2,7 +2,7 @@
 #include<iostream>
 #include<string>
 #include<vector>
-#include<cstdio>
+#include<stdio.h>
 using namespace std;
 enum Knight_name{dragon, ninja, iceman, lion, wolf};//武士名称
 enum Weapon_name{sword, bomb, arrow};//武器名称
@@ -505,3 +505,4 @@ void Warrior::Report_weapon(){
 	if(!p) cout << "no weapon";
 	cout << endl;
 }
+
