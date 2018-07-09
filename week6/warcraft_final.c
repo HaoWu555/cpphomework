@@ -1,4 +1,5 @@
-<pre name="code" class="cpp">#include<iostream>
+//<pre name="code" class="cpp">
+#include<iostream>
 #include<string>
 #include<vector>
 #include<cstdio>
