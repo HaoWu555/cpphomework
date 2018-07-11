@@ -1,0 +1,10 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main(){
+	int i;
+	cin>>i;
+	cout<<hex<<i<<endl;
+	cout<<stefill('0')<<setw(10)<<i<<endl;
+}
