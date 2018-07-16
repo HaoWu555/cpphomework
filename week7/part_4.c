@@ -123,13 +123,8 @@ string nyCopy(int n, int x, int l)
     string str = strGiven.at(n-1);
     return str.substr(x, l);
 }
-/*
-add函数
-*/
 string nyAdd(string s1, string s2)
 {
-    //判断字符串里是否全为数字
-    //因为83s经过atoi后会变为83
     for (int i = 0; i < s1.size(); i++)
     {
         if (s1.at(i) < '0' || s1.at(i) > '9')
@@ -144,7 +139,6 @@ string nyAdd(string s1, string s2)
             return s1 + s2;
         }
     }
-    //若全为数字，判断是否在0和99999之间
     long a = atoi(s1.c_str());  
     long b = atoi(s2.c_str());
     if (a >= 0 && a <= 99999 && b >= 0 && b <= 99999)
@@ -158,9 +152,6 @@ string nyAdd(string s1, string s2)
         return s1 + s2;
     }
 }
-/*
-find函数
-*/
 int nyFind(int n, string s)
 {
     int pos = strGiven.at(n-1).find(s);
