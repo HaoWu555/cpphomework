@@ -15,9 +15,9 @@ public:
 		if (addr != NULL)
 			delete [] addr;
 	}
-	T1 *operator[](int C){
-		return addr + C*b;
-	};
+	T1 *operator[](int C){ //重载第一个[],返回一个指针，
+		return addr + C*b; //第二个[],则可以直接加，
+	};					   // 与一维数组一样
 };
 
 template <class T>
