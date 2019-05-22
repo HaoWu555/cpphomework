@@ -1,11 +1,9 @@
 #include<iostream>
 using namespace std;
 int main(int argc, const char * argv[] ){
-	int a = 5;
-	int & r =a;
+	int a;
 	
-	cout<<r<<endl;
-	cout<<a<<endl;
-	cout<<r<<endl;
+	a=getchar();
+	cout<<getchar()<<endl;
 	return 0;
 }
